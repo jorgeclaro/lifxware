@@ -1,0 +1,28 @@
+{
+	"tabWidth": 4,
+	"singleQuote": true,
+	"useTabs": true,
+	"printWidth": 120,
+	"arrowParens": "always",
+	"overrides": [
+		{
+			"files": "*.yml",
+			"options": {
+				"tabWidth": 2,
+				"singleQuote": false
+			}
+		},
+		{
+			"files": "*.json",
+			"options": {
+				"tabWidth": 2
+			}
+		},
+		{
+			"files": "*.md",
+			"options": {
+				"tabWidth": 2
+			}
+		}
+	]
+}
