@@ -19,7 +19,7 @@ The file `cli.ts` contains a working cli example.
 The library uses a client for network communication. This client handles communication with all lights in the network.
 
 ```js
-const Client = require('node-lifx').Client;
+const Client = require('lifxware').Client;
 const client = new Client();
 ```
 
@@ -27,7 +27,7 @@ The `Client` object is an EventEmitter and emmits events whenever any changes oc
 The client starts discovery of lights upon it's creation. If a new light is found the client emmits a `light-new` event. This event contains the light as an object on which methods can be called then:
 
 ```js
-const Client = require('node-lifx').Client;
+const Client = require('lifxware').Client;
 const client = new Client();
 
 client.on('light-new', (light) => {
@@ -41,7 +41,7 @@ For the initialization of the client different settings can be provided.
 This is an example with the default options:
 
 ```js
-const Client = require('node-lifx').Client;
+const Client = require('lifxware').Client;
 const client = new Client({
 	lightOfflineTolerance: 3, // A light is offline if not seen for the given amount of discoveries
 	messageHandlerTimeout: 45000, // in ms, if not answer in time an error is provided to get methods
