@@ -4,11 +4,17 @@
 	"version": "0.1.0",
 	"author": "Jorge Claro <jmc.claro@gmail.com>",
 	"main": "dist/client.js",
+	"files": [
+		"dist/**/*"
+	],
+	"engines": {
+		"node": ">=8"
+	},
+	"licence": "MIT",
 	"dependencies": {
 		"@types/cli-table": "0.3.0",
 		"@types/lodash": "4.14.120",
-		"@types/node": "10.12.24",
-		"@types/pino": "5.8.4",
+		"@types/node": "12.0.5",
 		"cli-table": "0.3.1",
 		"commander": "2.20.0",
 		"eslint-config-prettier": "4.1.0",
@@ -18,13 +24,12 @@
 		"from-exponential": "1.0.0",
 		"inquirer": "6.3.1",
 		"lodash": "4.17.11",
-		"pino": "4.17.6",
-		"prettierrc": "0.0.0",
-		"ts-node": "8.0.2",
-		"typescript": "3.3.3"
+		"prettierrc": "0.0.0-5",
+		"ts-node": "8.2.0"
 	},
 	"scripts": {
-		"build": "npx tsc",
+		"build": "rm -rf dist && npx tsc",
+		"build:watch": "rm -rf dist && npx tsc -w",
 		"test": "echo \"Error: no test specified\" && exit 0",
 		"lint": "npx eslint src --ext ts",
 		"cli": "node -r ts-node/register src/cli.ts"
@@ -34,6 +39,7 @@
 		"url": "https://gitlab.com/jorgeclaro/lifxware.git"
 	},
 	"devDependencies": {
+		"typescript": "3.5.1",
 		"pre-commit": "1.2.2",
 		"eslint": "5.14.0",
 		"typescript-eslint-parser": "22.0.0"

@@ -2,8 +2,13 @@
 	"compilerOptions": {
 		"module": "commonjs",
 		"target": "es2015",
+		"declaration": true,
+		"declarationMap": true,
 		"inlineSourceMap": true,
+		"alwaysStrict": true,
 		"outDir": "dist"
 	},
-	"exclude": ["node_modules"]
+	"include": ["src"],
+	"exclude": ["node_modules"],
+	"types": ["@types/cli-table", "@types/lodash", "@types/node"]
 }
