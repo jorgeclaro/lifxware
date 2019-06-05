@@ -2,7 +2,8 @@
 	"compilerOptions": {
 		"module": "commonjs",
 		"target": "es2015",
-		"inlineSourceMap": true
+		"inlineSourceMap": true,
+		"outDir": "dist"
 	},
 	"exclude": ["node_modules"]
 }
