@@ -28,12 +28,12 @@
 		"lint": "npx eslint src --ext ts"
 	},
 	"repository": {
-		"type": "git"
+		"type": "git",
+		"url": "https://gitlab.com/jorgeclaro/lifxware.git"
 	},
 	"devDependencies": {
 		"pre-commit": "1.2.2",
 		"eslint": "5.14.0",
-		"jest": "24.5.0",
 		"typescript-eslint-parser": "22.0.0"
 	},
 	"pre-commit": [
