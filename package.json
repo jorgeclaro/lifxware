@@ -1,7 +1,7 @@
 {
 	"name": "lifxware",
 	"description": "Typescript implementation of the LIFX protocol",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"author": "Jorge Claro <jmc.claro@gmail.com>",
 	"main": "dist/client.js",
 	"files": [
@@ -10,7 +10,7 @@
 	"engines": {
 		"node": ">=8"
 	},
-	"licence": "MIT",
+	"license": "MIT",
 	"dependencies": {
 		"@types/cli-table": "0.3.0",
 		"@types/lodash": "4.14.120",
