@@ -191,7 +191,7 @@ try {
 
 try {
 	// Set to a light green at 80% brightness over next two seconds
-	await light.setColor(50, 50, 80, 3500, 2000s);
+	await light.setColor(50, 50, 80, 3500, 2000);
 } catch (err) {
 	logger.error(err);
 }
