@@ -337,6 +337,7 @@ try {
 }
 
 try {
+	//Cached
 	const state = await light.getState(true);
 	logger.info(state);
 } catch (err) {
@@ -411,38 +412,6 @@ Example result:
 {
 	"majorVersion": 2,
 	"minorVersion": 1
-}
-```
-
-#### `light.getHardwareVersion()`
-
-Requests the hardware version from a light (vendor, product and version). This function is asynchronous.
-The function will return a promise.
-If the light has been reached with success, the promise will be resolved, otherwise it will be rejected after `client.resendMaxTimes` with `client.resendPacketDelay` in case it has not.
-
-```js
-try {
-	const hardwareVersion = await light.getHardwareVersion();
-	logger.info(hardwareVersion);
-} catch (err) {
-	logger.error(err);
-}
-```
-
-Example result:
-
-```json
-{
-	"vendorId": 1,
-	"vendorName": "LIFX",
-	"productId": 1,
-	"productName": "Original 1000",
-	"version": 6,
-	"productFeatures": {
-		"color": true,
-		"infrared": false,
-		"multizone": false
-	}
 }
 ```
 
