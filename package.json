@@ -1,7 +1,7 @@
 {
   "name": "lifxware",
   "description": "Typescript implementation of the LIFX protocol",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "author": "Jorge Claro <jmc.claro@gmail.com>",
   "main": "dist/client.js",
   "files": [
@@ -13,20 +13,17 @@
   "license": "MIT",
   "dependencies": {
     "@types/cli-table": "0.3.0",
-    "@types/lodash": "4.14.120",
-    "@types/node": "12.0.5",
+    "@types/lodash": "4.14.149",
+    "@types/node": "12.12.14",
     "cli-table": "0.3.1",
-    "commander": "2.20.0",
-    "eslint-config-prettier": "4.1.0",
-    "eslint-plugin-jest": "22.3.2",
-    "eslint-plugin-typescript": "0.14.0",
-    "eventemitter3": "2.0.3",
+    "commander": "4.0.1",
+    "eventemitter3": "4.0.0",
     "from-exponential": "1.0.0",
-    "inquirer": "6.3.1",
+    "inquirer": "7.0.0",
     "lodash": "4.17.12",
     "prettierrc": "0.0.0",
-    "ts-node": "8.2.0",
-    "snyk": "^1.256.0"
+    "snyk": "1.256.0",
+    "ts-node": "8.5.4"
   },
   "scripts": {
     "build": "rm -rf dist && npx tsc",
@@ -34,7 +31,7 @@
     "test": "echo \"Error: no test specified\" && exit 0",
     "lint": "npx eslint src --ext ts",
     "cli": "node -r ts-node/register src/cli.ts",
-    "snyk-protect": "snyk protect",
+    "snyk-protect": "snyk protect --org jorgeclaro",
     "prepare": "npm run snyk-protect"
   },
   "repository": {
@@ -42,10 +39,11 @@
     "url": "https://gitlab.com/jorgeclaro/lifxware.git"
   },
   "devDependencies": {
-    "typescript": "3.5.1",
+    "@typescript-eslint/eslint-plugin": "2.10.0",
+    "@typescript-eslint/parser": "2.10.0",
+    "eslint": "6.7.2",
     "pre-commit": "1.2.2",
-    "eslint": "5.14.0",
-    "typescript-eslint-parser": "22.0.0"
+    "typescript": "3.7.3"
   },
   "pre-commit": [
     "lint"
