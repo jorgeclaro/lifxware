@@ -22,7 +22,7 @@
     "inquirer": "7.0.0",
     "lodash": "4.17.12",
     "prettierrc": "0.0.0",
-    "snyk": "1.256.0",
+    "snyk": "^1.316.1",
     "ts-node": "8.5.4"
   },
   "scripts": {
