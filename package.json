@@ -1,7 +1,7 @@
 {
 	"name": "lifxware",
 	"description": "Typescript implementation of the LIFX protocol",
-	"version": "0.1.8",
+	"version": "0.1.9",
 	"author": "Jorge Claro <jmc.claro@gmail.com>",
 	"main": "dist/client.js",
 	"files": [
