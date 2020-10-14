@@ -28,7 +28,6 @@
 	"scripts": {
 		"build": "rm -rf dist && npx tsc",
 		"build:watch": "rm -rf dist && npx tsc -w",
-		"test": "echo \"Error: no test specified\" && exit 0",
 		"lint": "npx eslint src --ext ts",
 		"cli": "node -r ts-node/register src/cli.ts",
 		"snyk-protect": "snyk protect --org jorgeclaro",
@@ -36,7 +35,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://gitlab.com/jorgeclaro/lifxware.git"
+		"url": "https://github.com/jorgeclaro/lifxware.git"
 	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "2.33.0",
