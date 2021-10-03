@@ -20,7 +20,7 @@
 		"eventemitter3": "4.0.4",
 		"from-exponential": "1.0.0",
 		"inquirer": "7.1.0",
-		"lodash": "4.17.19",
+		"lodash": "4.17.21",
 		"prettierrc": "0.0.0",
 		"snyk": "1.321.0",
 		"ts-node": "8.10.1"
