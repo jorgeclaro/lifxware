@@ -174,7 +174,7 @@ export class Light extends EventEmitter {
 	public async setPower(power: boolean, duration?: number) {
 		const ctx = this;
 
-		return new Promise(function(resolve, reject) {
+		return new Promise(function (resolve, reject) {
 			if (!ctx._connectivity) {
 				return reject(new ServiceErrorBuilder(ER_LIGHT_OFFLINE).withContextualMessage(`Id: ${ctx.id}`).build());
 			}
@@ -1052,7 +1052,7 @@ export class Light extends EventEmitter {
 							return reject(error);
 						}
 						/** Convert HSB values to readable format */
-						data.color.forEach(function(color: ColorHSBK) {
+						data.color.forEach(function (color: ColorHSBK) {
 							const hsbk = packetToNormalisedHSBK(data.color);
 
 							color.hue = hsbk.hue;
@@ -1119,7 +1119,7 @@ export class Light extends EventEmitter {
 					return reject(err);
 				}
 
-				return resolve();
+				return resolve(undefined);
 			});
 		});
 	}
@@ -1145,7 +1145,7 @@ export class Light extends EventEmitter {
 					return reject(err);
 				}
 
-				return resolve();
+				return resolve(undefined);
 			});
 		});
 	}
@@ -1265,7 +1265,7 @@ export class Light extends EventEmitter {
 					return reject(err);
 				}
 
-				return resolve();
+				return resolve(undefined);
 			});
 		});
 	}
