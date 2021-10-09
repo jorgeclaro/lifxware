@@ -1,7 +1,7 @@
 {
 	"name": "lifxware",
 	"description": "Typescript implementation of the LIFX protocol",
-	"version": "0.1.11",
+	"version": "0.1.12",
 	"author": "Jorge Claro <jmc.claro@gmail.com>",
 	"main": "dist/client.js",
 	"files": [
@@ -21,8 +21,6 @@
 		"from-exponential": "1.0.0",
 		"inquirer": "7.1.0",
 		"lodash": "4.17.21",
-		"prettierrc": "0.0.0",
-		"snyk": "^1.733.0",
 		"ts-node": "^10.2.1"
 	},
 	"scripts": {
@@ -42,6 +40,8 @@
 		"@typescript-eslint/parser": "^4.33.0",
 		"eslint": "^7.32.0",
 		"pre-commit": "1.2.2",
+		"prettierrc": "0.0.0",
+		"snyk": "^1.733.0",
 		"typescript": "3.9.2"
 	},
 	"pre-commit": [
