@@ -1,8 +1,12 @@
 # LIFXware
 
-A Typescript implementation of the [LIFX protocol](https://github.com/LIFX/lifx-protocol-docs).
+A Typescript implementation of the LIFX protocol.
 
 This library is not, in any way, affiliated or related to LiFi Labs, Inc.. Use it at your own risk.
+
+- [LAN Protocol](https://github.com/LIFX/public-protocol)
+- [LAN Protocol Docs](https://github.com/LIFX/lifx-protocol-docs)
+
 
 ## Installation
 
