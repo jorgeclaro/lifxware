@@ -1,7 +1,7 @@
 {
 	"name": "lifxware",
 	"description": "Typescript implementation of the LIFX protocol",
-	"version": "0.1.14",
+	"version": "0.1.15",
 	"author": "Jorge Claro <jmc.claro@gmail.com>",
 	"main": "dist/client.js",
 	"files": [
@@ -17,7 +17,7 @@
 		"@types/node": "17.0.13",
 		"cli-table": "0.3.11",
 		"commander": "9.0.0",
-		"eventemitter3": "^4.0.7",
+		"eventemitter3": "4.0.7",
 		"from-exponential": "1.0.0",
 		"inquirer": "8.2.0",
 		"lodash": "4.17.21",
