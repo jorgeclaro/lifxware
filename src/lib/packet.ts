@@ -380,10 +380,10 @@ export function objectToBuffer(obj: any): Buffer {
 	if (packetHandler.toBuffer) {
 		const packetTypeData = packet[packetHandler.name].toBuffer(obj);
 
-		return Buffer.concat([this.headerToBuffer(obj), packetTypeData]);
+		return Buffer.concat([headerToBuffer(obj), packetTypeData]);
 	}
 
-	return this.headerToBuffer(obj);
+	return headerToBuffer(obj);
 }
 
 /**
