@@ -44,6 +44,7 @@ import {
 } from './errors/lightErrors';
 import { ER_CLIENT_INVALID_ARGUMENT } from './errors/clientErrors';
 import { SetTileState64Request, SetUserPositionRequest, StateDeviceChainResponse } from './packets/tiles/tiles';
+import { Group } from './packets/group/group';
 
 export enum LightEvents {
 	CONECTIVITY = 'connectivity',
@@ -71,6 +72,7 @@ export class Light extends EventEmitter {
 	private _client: Client;
 	private _connectivity: boolean;
 	private _label: string;
+	private _group: Group;
 	private _power: boolean;
 	private _color: ColorHSBK;
 
@@ -785,6 +787,47 @@ export class Light extends EventEmitter {
 
 						resolve(data.label);
 					}
+				},
+				sqnNumber
+			);
+		});
+	}
+
+	public getGroup(cache = false, timeout: number = DEFAULT_MSG_REPLY_TIMEOUT): Promise<Group> {
+		const ctx = this;
+
+		return new Promise((resolve, reject) => {
+			if (!ctx.connectivity) {
+				return reject(new ServiceErrorBuilder(ER_LIGHT_OFFLINE).withContextualMessage(`Id: ${ctx.id}`).build());
+			}
+
+			if (cache === true) {
+				if (ctx._group) {
+					return resolve(ctx._group);
+				}
+			}
+
+			const cmdReq = { target: this.id };
+			const packetObj = createObject(packet.getGroup.type, cmdReq, ctx._client.source);
+			const sqnNumber = ctx._client.send(packetObj);
+			const timeoutHandle = setTimeout(() => {
+				reject(new ServiceErrorBuilder(ER_LIGHT_CMD_TIMEOUT).withContextualMessage(`Id: ${ctx.id}`).build());
+			}, timeout);
+
+			ctx._client.addMessageHandler(
+				packet.stateGroup.name,
+				(err: Error, data) => {
+					if (err) {
+						return reject(err);
+					}
+
+					clearTimeout(timeoutHandle);
+
+					return resolve({
+						group: data.group,
+						label: data.label,
+						updatedAt: data.updatedAt
+					});
 				},
 				sqnNumber
 			);
