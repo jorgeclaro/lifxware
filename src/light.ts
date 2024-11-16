@@ -68,10 +68,10 @@ export class Light extends EventEmitter {
 	public address: string;
 	public port: number;
 	public legacy: boolean;
+	public label: string;
 	private _discoveryPacketNumber: number;
 	private _client: Client;
 	private _connectivity: boolean;
-	private _label: string;
 	private _group: Group;
 	private _power: boolean;
 	private _color: ColorHSBK;
@@ -91,19 +91,6 @@ export class Light extends EventEmitter {
 				power: this._power,
 				color: this._color
 			});
-		}
-	}
-
-	get label() {
-		return this._label;
-	}
-
-	set label(newLabel: string) {
-		try {
-			assert.equal(this._label, newLabel);
-		} catch (e) {
-			this._label = newLabel;
-			this.emit(LightEvents.LABEL, this._label);
 		}
 	}
 
@@ -163,7 +150,7 @@ export class Light extends EventEmitter {
 		this._client = params.client;
 		this._power = true;
 		this._connectivity = true;
-		this._label = '';
+		this.label = '';
 		this._color = {
 			hue: 0,
 			saturation: 0,
@@ -719,8 +706,8 @@ export class Light extends EventEmitter {
 			}
 
 			if (cache === true) {
-				if (ctx._label.length > 0) {
-					return resolve(ctx._label);
+				if (ctx.label.length > 0) {
+					return resolve(ctx.label);
 				}
 			}
 
