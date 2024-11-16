@@ -1,0 +1,1 @@
+{"version":3,"file":"power.d.ts","sourceRoot":"","sources":["../../../src/packets/power/power.ts"],"names":[],"mappings":"AAAA,eAAO,MAAM,iBAAiB,IAAI,CAAC;AACnC,eAAO,MAAM,iBAAiB,QAAQ,CAAC;AAEvC,MAAM,WAAW,YAAY;IAC5B,KAAK,EAAE,MAAM,CAAC;IACd,QAAQ,CAAC,EAAE,MAAM,CAAC;CAClB;AAED,MAAM,WAAW,aAAa;IAC7B,KAAK,EAAE,MAAM,CAAC;CACd"}

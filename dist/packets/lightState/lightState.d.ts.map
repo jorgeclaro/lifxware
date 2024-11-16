@@ -1,0 +1,1 @@
+{"version":3,"file":"lightState.d.ts","sourceRoot":"","sources":["../../../src/packets/lightState/lightState.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,oBAAoB,CAAC;AAE/C,MAAM,WAAW,UAAU;IAC1B,KAAK,EAAE,MAAM,CAAC;IACd,GAAG,EAAE,MAAM,CAAC;IACZ,KAAK,EAAE,SAAS,CAAC;IACjB,KAAK,EAAE,MAAM,CAAC;IACd,IAAI,EAAE,MAAM,CAAC;CACb"}

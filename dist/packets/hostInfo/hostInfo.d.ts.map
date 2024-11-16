@@ -1,0 +1,1 @@
+{"version":3,"file":"hostInfo.d.ts","sourceRoot":"","sources":["../../../src/packets/hostInfo/hostInfo.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,QAAQ;IACxB,MAAM,EAAE,MAAM,CAAC;IACf,EAAE,EAAE,MAAM,CAAC;IACX,EAAE,EAAE,MAAM,CAAC;IACX,cAAc,EAAE,MAAM,CAAC;CACvB"}

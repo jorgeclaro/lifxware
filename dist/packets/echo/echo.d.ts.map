@@ -1,0 +1,1 @@
+{"version":3,"file":"echo.d.ts","sourceRoot":"","sources":["../../../src/packets/echo/echo.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,WAAW;IAC3B,OAAO,EAAE,MAAM,CAAC;CAChB;AAED,MAAM,WAAW,YAAY;IAC5B,OAAO,EAAE,MAAM,CAAC;CAChB"}
