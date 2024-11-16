@@ -1,0 +1,1 @@
+{"version":3,"file":"hostFirmware.d.ts","sourceRoot":"","sources":["../../../src/packets/hostFirmware/hostFirmware.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,YAAY;IAC5B,KAAK,MAAC;IACN,OAAO,MAAC;IACR,OAAO,EAAE,MAAM,CAAC;IAChB,YAAY,EAAE,MAAM,CAAC;IACrB,YAAY,EAAE,MAAM,CAAC;CACrB"}
