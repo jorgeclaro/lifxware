@@ -7,11 +7,17 @@
 		"Leesa Ward <leesa@doubleedesign.com.au>"
 	],
 	"module": "dist/client.js",
+	"main": "dist/client.js",
 	"types": "dist/client.d.ts",
 	"type": "module",
 	"files": [
 		"dist/**/*"
 	],
+	"exports": {
+		".": {
+			"import": "./dist/client.js"
+		}
+	},
 	"engines": {
 		"node": ">=20"
 	},
