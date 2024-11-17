@@ -1,10 +1,9 @@
-import * as dgram from 'dgram';
-import * as utils from './lib/utils';
 import forEach from 'lodash/forEach';
 import find from 'lodash/find';
 import ldDefaults from 'lodash/defaults';
 import { logger } from './lib/logger';
 import { Light } from './light';
+import { createSocket, Socket } from 'dgram';
 import {
 	PACKET_TRANSACTION_TYPES,
 	PACKET_HEADER_SEQUENCE_MAX,
@@ -20,8 +19,7 @@ import { ServiceType } from './packets/service/service';
 import { MessagePackHandler, MessagePack, RInfo } from './lib/messagePack';
 import { packet } from './packets/packets';
 import { AddressInfo } from 'net';
-import { isIpv4Format } from './lib/utils';
-
+import { getHostIPs, getRandomHexString, isIpv4Format } from './lib/utils';
 import { ServiceErrorBuilder } from './lib/error';
 import {
 	ER_CLIENT_SOCKET_ERROR,
@@ -83,7 +81,7 @@ export class Client extends EventEmitter {
 	public debug: boolean;
 
 	/** Client dgram socket instance */
-	private _socket: dgram.Socket;
+	private _socket: Socket;
 
 	/** Client dgram socket port number */
 	private _port: number;
@@ -127,9 +125,9 @@ export class Client extends EventEmitter {
 	public constructor(params?: ClientOptions, callback?: Function) {
 		super();
 		this.debug = false;
-		this.source = utils.getRandomHexString(8);
+		this.source = getRandomHexString(8);
 		this.devices = {};
-		this._socket = dgram.createSocket('udp4');
+		this._socket = createSocket('udp4');
 		this._isSocketBound = false;
 		this._messagePackQueue = [];
 		this._discoveryPacketSequence = 0;
@@ -207,7 +205,7 @@ export class Client extends EventEmitter {
 			ClientEvents.MESSAGE,
 			function (rawMsg: Buffer, rinfo: RInfo) {
 				try {
-					if (utils.getHostIPs().indexOf(rinfo.address) >= 0) {
+					if (getHostIPs().indexOf(rinfo.address) >= 0) {
 						if (this._debug) {
 							logger.debug('Detected own message: ', rawMsg.toString('hex'));
 						}
