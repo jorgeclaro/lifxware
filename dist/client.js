@@ -1,15 +1,14 @@
-import * as dgram from 'dgram';
-import * as utils from './lib/utils';
 import forEach from 'lodash/forEach';
 import find from 'lodash/find';
 import ldDefaults from 'lodash/defaults';
 import { logger } from './lib/logger';
 import { Light } from './light';
+import { createSocket } from 'dgram';
 import { PACKET_TRANSACTION_TYPES, PACKET_HEADER_SEQUENCE_MAX, PACKET_DEFAULT_SORUCE, bufferToObject, objectToBuffer, createObject, getPacketBodyHandlerByType, getPacketBodyHandlerByName } from './lib/packet';
 import { HSBK_MAXIMUM_RAW, packetToNormalisedHSBK } from './packets/color/colorHSBK';
 import { ServiceType } from './packets/service/service';
 import { packet } from './packets/packets';
-import { isIpv4Format } from './lib/utils';
+import { getHostIPs, getRandomHexString, isIpv4Format } from './lib/utils';
 import { ServiceErrorBuilder } from './lib/error';
 import { ER_CLIENT_SOCKET_ERROR, ER_CLIENT_MESSAGE_PROCESS, ER_CLIENT_NO_RESPONSE, ER_CLIENT_SOCKET_PORT_RANGE, ER_CLIENT_SOCKET_IP_PROTOCOL, ER_CLIENT_INVALID_CONFIG, ER_CLIENT_SOCKET_UNBOUND, ER_CLIENT_INVALID_ARGUMENT, ER_CLIENT_LIGHT_NOT_FOUND } from './errors/clientErrors';
 import EventEmitter from "events";
@@ -67,9 +66,9 @@ export class Client extends EventEmitter {
     constructor(params, callback) {
         super();
         this.debug = false;
-        this.source = utils.getRandomHexString(8);
+        this.source = getRandomHexString(8);
         this.devices = {};
-        this._socket = dgram.createSocket('udp4');
+        this._socket = createSocket('udp4');
         this._isSocketBound = false;
         this._messagePackQueue = [];
         this._discoveryPacketSequence = 0;
@@ -135,7 +134,7 @@ export class Client extends EventEmitter {
         }.bind(this));
         this._socket.on(ClientEvents.MESSAGE, function (rawMsg, rinfo) {
             try {
-                if (utils.getHostIPs().indexOf(rinfo.address) >= 0) {
+                if (getHostIPs().indexOf(rinfo.address) >= 0) {
                     if (this._debug) {
                         logger.debug('Detected own message: ', rawMsg.toString('hex'));
                     }
