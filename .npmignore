@@ -1,7 +1,11 @@
 node_modules/
 dist/
 coverage/
-npm-debug.log
-yarn-error.log
-.log
+.vscode/
+*.log
 .DS_Store
+.editorconfig
+.gitattributes
+.gitignore
+.nvmrc
+eslint.config.mjs

@@ -1,7 +1,8 @@
 import * as dgram from 'dgram';
-import * as _ from 'lodash';
 import * as utils from './lib/utils';
-import { EventEmitter } from 'eventemitter3';
+import forEach from 'lodash/forEach';
+import find from 'lodash/find';
+import ldDefaults from 'lodash/defaults';
 import { logger } from './lib/logger';
 import { Light } from './light';
 import {
@@ -33,6 +34,7 @@ import {
 	ER_CLIENT_INVALID_ARGUMENT,
 	ER_CLIENT_LIGHT_NOT_FOUND
 } from './errors/clientErrors';
+import EventEmitter from "events";
 
 export const MINIMUM_PORT_NUMBER = 1;
 export const MAXIMUM_PORT_NUMBER = 65535;
@@ -179,7 +181,7 @@ export class Client extends EventEmitter {
 			resendMaxTimes: 3
 		};
 
-		const opts: ClientOptions = _.defaults(params, defaults);
+		const opts: ClientOptions = ldDefaults(params, defaults);
 
 		this.validateClientOptions(opts);
 
@@ -192,7 +194,7 @@ export class Client extends EventEmitter {
 
 		this._socket.on(
 			ClientEvents.ERROR,
-			function(error: Error) {
+			function (error: Error) {
 				const clientError = new ServiceErrorBuilder(ER_CLIENT_SOCKET_ERROR).withInnerError(error).build();
 
 				this._isSocketBound = false;
@@ -203,7 +205,7 @@ export class Client extends EventEmitter {
 
 		this._socket.on(
 			ClientEvents.MESSAGE,
-			function(rawMsg: Buffer, rinfo: RInfo) {
+			function (rawMsg: Buffer, rinfo: RInfo) {
 				try {
 					if (utils.getHostIPs().indexOf(rinfo.address) >= 0) {
 						if (this._debug) {
@@ -238,7 +240,7 @@ export class Client extends EventEmitter {
 		this._socket.bind(
 			opts.port,
 			opts.address,
-			function() {
+			function () {
 				this._port = opts.port;
 				this._isSocketBound = true;
 				this._socket.setBroadcast(true);
@@ -275,7 +277,7 @@ export class Client extends EventEmitter {
 		}
 
 		if (opts.lightAddresses) {
-			opts.lightAddresses.forEach(function(lightAddress) {
+			opts.lightAddresses.forEach(function (lightAddress) {
 				if (!isIpv4Format(lightAddress)) {
 					throw new ServiceErrorBuilder(ER_CLIENT_INVALID_CONFIG)
 						.withContextualMessage(
@@ -328,25 +330,25 @@ export class Client extends EventEmitter {
 		}
 
 		if (msgPack.transactionType === PACKET_TRANSACTION_TYPES.ONE_WAY) {
-			this._socket.send(msgPack.payload, 0, msgPack.payload.length, this._port, msgPack.targetAddress);
+			this._socket.send(msgPack.payload as any, 0, msgPack.payload.length, this._port, msgPack.targetAddress);
 			if (this.debug) {
 				logger.info('DEBUG - ' + msgPack.payload.toString('hex') + ' to ' + msgPack.targetAddress);
 			}
 		} else if (msgPack.transactionType === PACKET_TRANSACTION_TYPES.REQUEST_RESPONSE) {
 			if (msgPack.sendAttempts < this._resendMaxTimes) {
 				if (Date.now() > msgPack.lastSentAt + this._resendPacketDelay) {
-					this._socket.send(msgPack.payload, 0, msgPack.payload.length, this._port, msgPack.targetAddress);
+					this._socket.send(msgPack.payload as any, 0, msgPack.payload.length, this._port, msgPack.targetAddress);
 					msgPack.sendAttempts += 1;
 					msgPack.lastSentAt = Date.now();
 					if (this.debug) {
 						logger.info(
 							'DEBUG - ' +
-								msgPack.payload.toString('hex') +
-								' to ' +
-								msgPack.targetAddress +
-								', send ' +
-								msgPack.sendAttempts +
-								' time(s)'
+							msgPack.payload.toString('hex') +
+							' to ' +
+							msgPack.targetAddress +
+							', send ' +
+							msgPack.sendAttempts +
+							' time(s)'
 						);
 					}
 				}
@@ -355,7 +357,7 @@ export class Client extends EventEmitter {
 				this._messagePackQueue.unshift(msgPack);
 			} else {
 				this._messagePackHandlers.forEach(
-					async function(handler: MessagePackHandler, hdlrIndex: number) {
+					async function (handler: MessagePackHandler, hdlrIndex: number) {
 						if (
 							handler.name === packet.acknowledgement.name &&
 							handler.sequenceNumber === msgPack.sequenceNumber
@@ -364,8 +366,7 @@ export class Client extends EventEmitter {
 
 							const error = new ServiceErrorBuilder(ER_CLIENT_NO_RESPONSE)
 								.withContextualMessage(
-									`No response after max resend limit of ${this._resendMaxTimes} Handler: ${
-										handler.name
+									`No response after max resend limit of ${this._resendMaxTimes} Handler: ${handler.name
 									}`
 								)
 								.build();
@@ -393,7 +394,7 @@ export class Client extends EventEmitter {
 
 	private sendBroadcastDiscoveryPacket(lights?: string[]) {
 		/** Sign flag on inactive lights */
-		_.forEach(this.devices, (light) => {
+		forEach(this.devices, (light) => {
 			if (this.devices[light.id].connectivity !== false) {
 				const diff = this._discoveryPacketSequence - light.discoveryPacketNumber;
 
@@ -411,7 +412,7 @@ export class Client extends EventEmitter {
 
 		if (lights) {
 			/** Send a discovery Packet to each light given directly */
-			lights.forEach(function(lightAddress) {
+			lights.forEach(function (lightAddress) {
 				const msg = createObject(packet.getService.type, {}, this.source);
 
 				msg.target = lightAddress;
@@ -664,14 +665,14 @@ export class Client extends EventEmitter {
 		const lights = [];
 
 		if (!status) {
-			_.forEach(this.devices, function(light) {
+			forEach(this.devices, function (light) {
 				lights.push(light);
 			});
 
 			return lights;
 		}
 
-		_.forEach(this.devices, (light) => {
+		forEach(this.devices, (light) => {
 			if (light.connectivity === status) {
 				lights.push(light);
 			}
@@ -693,20 +694,20 @@ export class Client extends EventEmitter {
 
 		/** Dots or colons is high likely an IP Address */
 		if (identifier.indexOf('.') >= 0 || identifier.indexOf(':') >= 0) {
-			light = _.find(this.devices, { address: identifier });
+			light = find(this.devices, { address: identifier });
 			if (light) {
 				return light;
 			}
 		}
 
 		/** Search id */
-		light = _.find(this.devices, { id: identifier });
+		light = find(this.devices, { id: identifier });
 		if (light) {
 			return light;
 		}
 
 		/** Search label */
-		light = _.find(this.devices, { label: identifier });
+		light = find(this.devices, { label: identifier });
 		if (light) {
 			return light;
 		}

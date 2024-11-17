@@ -1,4 +1,3 @@
-/// <reference types="node" />
 /**
  * Sleeps for a confugurable interval
  * @param milliseconds interval of sleep

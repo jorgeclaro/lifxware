@@ -1,6 +1,4 @@
 node_modules/
 coverage/
-npm-debug.log
-yarn-error.log
-.log
+*.log
 .DS_Store

@@ -1,5 +1,6 @@
 import * as os from 'os';
-import * as fromExpoential from 'from-exponential';
+// @ts-ignore
+import fromExponential from 'from-exponential';
 
 /**
  * Sleeps for a confugurable interval
@@ -15,7 +16,7 @@ export function sleep(milliseconds: number) {
  * @param decimals number of decimals
  */
 export function round(value: number, decimals: number) {
-	return Number(Math.round(fromExpoential(value + 'e' + decimals)) + 'e-' + decimals);
+	return Number(Math.round(Number(fromExponential(value + 'e' + decimals))) + 'e-' + decimals);
 }
 
 /**

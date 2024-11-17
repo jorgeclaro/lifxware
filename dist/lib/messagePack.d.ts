@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { PACKET_TRANSACTION_TYPES } from './packet';
 /** Definition of message pack handler */
 export interface MessagePackHandler {

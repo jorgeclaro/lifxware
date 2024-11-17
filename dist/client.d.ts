@@ -1,8 +1,7 @@
-/// <reference types="node" />
-import { EventEmitter } from 'eventemitter3';
 import { Light } from './light';
 import { RInfo } from './lib/messagePack';
 import { AddressInfo } from 'net';
+import EventEmitter from "events";
 export declare const MINIMUM_PORT_NUMBER = 1;
 export declare const MAXIMUM_PORT_NUMBER = 65535;
 export declare const DEFAULT_PROVISIONING_DELAY = 5000;
@@ -11,7 +10,7 @@ export declare const DEFAULT_BROADCAST_PORT = 56800;
 export declare const DEFAULT_MSG_RATE_LIMIT = 100;
 export declare const DEFAULT_MSG_DISCOVERY_INTERVAL = 5000;
 export declare const DEFAULT_MSG_REPLY_TIMEOUT = 5000;
-declare type Devices = {
+type Devices = {
     [id: string]: Light;
 };
 export declare enum ClientEvents {
