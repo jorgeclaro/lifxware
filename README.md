@@ -14,16 +14,12 @@ This library is not, in any way, affiliated or related to LiFi Labs, Inc.. Use i
 $ npm install lifxware --save
 ```
 
-## Usage
-
-The file `cli.ts` contains a working cli example.
-
 ### Client
 
 The library uses a client for network communication. This client handles communication with all lights in the network.
 
 ```js
-const Client = require('lifxware').Client;
+import { Client } from 'lifxware';
 const client = new Client();
 ```
 
@@ -31,7 +27,7 @@ The `Client` object is an EventEmitter and emmits events whenever any changes oc
 The client starts discovery of lights upon it's creation. If a new light is found the client emmits a `light-new` event. This event contains the light as an object on which methods can be called then:
 
 ```js
-const Client = require('lifxware').Client;
+import { Client } from 'lifxware';
 const client = new Client();
 
 client.on('light-new', (light) => {
@@ -143,6 +139,7 @@ Usage examples:
 ```js
 try {
 	const data = await light.getColor();
+
 	logger.info(data);
 } catch (err) {
 	logger.error(err);
@@ -151,6 +148,7 @@ try {
 try {
 	//Cached
 	const data = await light.getColor(true);
+
 	logger.info(data);
 } catch (err) {
 	logger.error(err);
@@ -276,6 +274,7 @@ Usage examples:
 ```js
 try {
 	const ir = await light.getInfrared();
+
 	logger.info(ir);
 } catch (err) {
 	logger.error(err);
@@ -306,6 +305,7 @@ Usage examples:
 ```js
 try {
 	const ir = await light.setInfrared(25);
+
 	logger.info(ir);
 } catch (err) {
 	logger.error(err);
@@ -335,6 +335,7 @@ Usage examples:
 ```js
 try {
 	const state = await light.getState();
+
 	logger.info(state);
 } catch (err) {
 	logger.error(err);
@@ -343,6 +344,7 @@ try {
 try {
 	//Cached
 	const state = await light.getState(true);
+
 	logger.info(state);
 } catch (err) {
 	logger.error(err);
@@ -375,6 +377,7 @@ Usage examples:
 ```js
 try {
 	const power = await light.getPower();
+
 	logger.info(power);
 } catch (err) {
 	logger.error(err);
@@ -383,6 +386,7 @@ try {
 try {
 	//Cached
 	const power = await light.getPower(true);
+
 	logger.info(power);
 } catch (err) {
 	logger.error(err);
@@ -404,6 +408,7 @@ If the light has been reached with success, the promise will be resolved, otherw
 ```js
 try {
 	const firmwareVersion = await light.getFirmwareVersion();
+
 	logger.info(firmwareVersion);
 } catch (err) {
 	logger.error(err);
@@ -428,6 +433,7 @@ If the light has been reached with success, the promise will be resolved, otherw
 ```js
 try {
 	const firmwareInfo = await light.getFirmwareInfo();
+
 	logger.info(firmwareInfo);
 } catch (err) {
 	logger.error(err);
@@ -453,6 +459,7 @@ If the light has been reached with success, the promise will be resolved, otherw
 ```js
 try {
 	const wifiInfo = await light.getWifiInfo();
+
 	logger.info(wifiInfo);
 } catch (err) {
 	logger.error(err);
@@ -478,6 +485,7 @@ If the light has been reached with success, the promise will be resolved, otherw
 ```js
 try {
 	const wifiVersion = await light.getWifiVersion();
+
 	logger.info(wifiVersion);
 } catch (err) {
 	logger.error(err);
@@ -502,6 +510,7 @@ If the light has been reached with success, the promise will be resolved, otherw
 ```js
 try {
 	const ambientLight = await light.getAmbientLight();
+
 	logger.info(ambientLight);
 } catch (err) {
 	logger.error(err);
@@ -532,6 +541,7 @@ If the light has been reached with success, the promise will be resolved, otherw
 ```js
 try {
 	const label = await light.getLabel();
+
 	logger.info(label);
 } catch (err) {
 	logger.error(err);
@@ -558,6 +568,7 @@ If the light has been reached with success, the promise will be resolved, otherw
 ```js
 try {
 	const label = await light.setLabel('label1');
+
 	logger.info(label);
 } catch (err) {
 	logger.error(err);

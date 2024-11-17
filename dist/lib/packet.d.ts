@@ -1,4 +1,3 @@
-/// <reference types="node" />
 /** Masks for packet description in packet header */
 export declare const ADDRESSABLE_BIT = 4096;
 export declare const TAGGED_BIT = 8192;

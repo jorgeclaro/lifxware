@@ -1,7 +1,7 @@
 {
 	"name": "lifxware",
 	"description": "Typescript implementation of the LIFX protocol",
-	"version": "0.1.22",
+	"version": "0.1.23",
 	"author": "Jorge Claro <jmc.claro@gmail.com>",
 	"contributors": [
 		"Leesa Ward <leesa@doubleedesign.com.au>"
@@ -12,28 +12,20 @@
 		"dist/**/*"
 	],
 	"engines": {
-		"node": ">=8"
+		"node": ">=20"
 	},
 	"license": "MIT",
 	"dependencies": {
-		"@types/cli-table": "0.3.0",
-		"@types/lodash": "4.14.178",
-		"@types/node": "17.0.13",
-		"cli-table": "0.3.11",
-		"commander": "9.0.0",
-		"eventemitter3": "4.0.7",
-		"from-exponential": "1.0.0",
-		"inquirer": "8.2.0",
-		"lodash": "4.17.21",
-		"ts-node": "10.4.0"
+		"@types/lodash": "4.17.13",
+		"@types/node": "22.9.0",
+		"from-exponential": "1.1.1",
+		"lodash": "4.17.21"
 	},
 	"scripts": {
 		"build": "rm -rf dist && npx tsc",
 		"build:watch": "rm -rf dist && npx tsc -w",
-		"lint": "npx eslint src --ext ts",
-		"cli": "node -r ts-node/register src/cli.ts",
-		"snyk-protect": "snyk protect --org jorgeclaro",
-		"prepare": "npm run snyk-protect",
+		"lint": "npx eslint",
+		"lint:fix": "npx eslint --fix",
 		"prepublishOnly": "npm run build"
 	},
 	"repository": {
@@ -41,16 +33,12 @@
 		"url": "https://github.com/jorgeclaro/lifxware.git"
 	},
 	"devDependencies": {
-		"@typescript-eslint/eslint-plugin": "5.10.1",
-		"@typescript-eslint/parser": "5.10.1",
-		"eslint": "8.8.0",
-		"pre-commit": "1.2.2",
-		"prettierrc": "0.0.0",
-		"snyk": "1.1064.0",
-		"typescript": "4.5.5"
-	},
-	"pre-commit": [
-		"lint"
-	],
-	"snyk": true
+		"@eslint/json": "0.6.0",
+		"@eslint/markdown": "6.2.1",
+		"@typescript-eslint/eslint-plugin": "8.14.0",
+		"@typescript-eslint/parser": "8.14.0",
+		"eslint": "9.15.0",
+		"globals": "15.12.0",
+		"typescript": "5.6.3"
+	}
 }

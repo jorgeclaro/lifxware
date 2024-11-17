@@ -1,4 +1,3 @@
-import * as _ from 'lodash';
 import { Version } from './version';
 import { PacketBodyHandler } from '../../lib/packet';
 import { ServiceErrorBuilder } from '../../lib/error';

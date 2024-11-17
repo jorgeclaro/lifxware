@@ -1,4 +1,3 @@
-import { EventEmitter } from 'eventemitter3';
 import { ColorHSBK } from './packets/color/colorHSBK';
 import { Tag } from './packets/tag/tag';
 import { TagLabels } from './packets/tagLabel/tagLabel';
@@ -7,6 +6,7 @@ import { WaveformRequest } from './packets/waveform/waveform';
 import { Client } from './client';
 import { SetTileState64Request, SetUserPositionRequest } from './packets/tiles/tiles';
 import { Group } from './packets/group/group';
+import EventEmitter from 'events';
 export declare enum LightEvents {
     CONECTIVITY = "connectivity",
     LABEL = "label",
@@ -27,17 +27,15 @@ export declare class Light extends EventEmitter {
     address: string;
     port: number;
     legacy: boolean;
+    label: string;
     private _discoveryPacketNumber;
     private _client;
     private _connectivity;
-    private _label;
     private _group;
     private _power;
     private _color;
     get connectivity(): boolean;
     set connectivity(newConnectivity: boolean);
-    get label(): string;
-    set label(newLabel: string);
     get power(): boolean;
     set power(newPower: boolean);
     get color(): ColorHSBK;

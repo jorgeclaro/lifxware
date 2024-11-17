@@ -14,11 +14,3 @@ insert_final_newline = true
 [*.md]
 indent_style = space
 indent_size = 2
-
-[*.{yml,raml}]
-indent_style = space
-indent_size = 2
-
-[*.json]
-indent_style = space
-indent_size = 2

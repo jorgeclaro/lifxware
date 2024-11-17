@@ -1,4 +1,5 @@
-import * as _ from 'lodash';
+import assign from 'lodash/assign';
+import extend from 'lodash/extend';
 import { packet } from '../packets/packets';
 import { ServiceErrorBuilder } from './error';
 import { ER_CLIENT_MESSAGE_PROCESS } from '../errors/clientErrors';
@@ -361,7 +362,7 @@ export function bufferToObject(buf: Buffer) {
 		if (packetBodyHandler.toObject) {
 			const specificObj = packetBodyHandler.toObject(buf.slice(PACKET_HEADER_SIZE));
 
-			return _.extend(header, specificObj);
+			return extend(header, specificObj);
 		}
 
 		return header;
@@ -407,7 +408,7 @@ export function createObject(type: number, params, source?: string, target?: str
 
 	obj.tagged = packetHandler.tagged;
 
-	return _.assign(obj, params);
+	return assign(obj, params);
 }
 
 export function getPacketBodyHandlerByType(type: number): PacketBodyHandler {

@@ -1,6 +1,4 @@
-import * as _ from 'lodash';
 import * as assert from 'assert';
-import { EventEmitter } from 'eventemitter3';
 import {
 	ColorHSBK,
 	ColorHSBKRequest,
@@ -45,6 +43,7 @@ import {
 import { ER_CLIENT_INVALID_ARGUMENT } from './errors/clientErrors';
 import { SetTileState64Request, SetUserPositionRequest, StateDeviceChainResponse } from './packets/tiles/tiles';
 import { Group } from './packets/group/group';
+import EventEmitter from 'events';
 
 export enum LightEvents {
 	CONECTIVITY = 'connectivity',
