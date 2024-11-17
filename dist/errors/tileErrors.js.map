@@ -1,0 +1,1 @@
+{"version":3,"file":"tileErrors.js","sourceRoot":"","sources":["../../src/errors/tileErrors.ts"],"names":[],"mappings":"AAAA,OAAO,EAAU,aAAa,EAAE,MAAM,cAAc,CAAC;AAErD,MAAM,CAAC,MAAM,oBAAoB,GAAW;IAC3C,IAAI,EAAE,sBAAsB;IAC5B,OAAO,EAAE,uBAAuB;IAChC,QAAQ,EAAE,aAAa,CAAC,IAAI;CAC5B,CAAC"}

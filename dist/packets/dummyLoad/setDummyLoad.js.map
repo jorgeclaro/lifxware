@@ -1,0 +1,1 @@
+{"version":3,"file":"setDummyLoad.js","sourceRoot":"","sources":["../../../src/packets/dummyLoad/setDummyLoad.ts"],"names":[],"mappings":"AAEA,MAAM,IAAI,GAAG,CAAC,CAAC;AAEf,MAAM,CAAC,MAAM,YAAY,GAAsB;IAC9C,IAAI,EAAE,EAAE;IACR,IAAI,EAAE,cAAc;IACpB,MAAM,EAAE,KAAK;IACb,IAAI,EAAE,IAAI;IACV,MAAM,EAAE,KAAK;CACb,CAAC"}

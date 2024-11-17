@@ -1,0 +1,1 @@
+{"version":3,"file":"stateDimmerVoltage.js","sourceRoot":"","sources":["../../../src/packets/dimmerVoltage/stateDimmerVoltage.ts"],"names":[],"mappings":"AAEA,MAAM,IAAI,GAAG,CAAC,CAAC;AAEf,MAAM,CAAC,MAAM,kBAAkB,GAAsB;IACpD,IAAI,EAAE,GAAG;IACT,IAAI,EAAE,oBAAoB;IAC1B,MAAM,EAAE,KAAK;IACb,IAAI,EAAE,IAAI;IACV,MAAM,EAAE,KAAK;CACb,CAAC"}

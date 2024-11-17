@@ -1,0 +1,1 @@
+{"version":3,"file":"reboot.js","sourceRoot":"","sources":["../../../src/packets/others/reboot.ts"],"names":[],"mappings":"AAEA,MAAM,IAAI,GAAG,CAAC,CAAC;AAEf,MAAM,CAAC,MAAM,MAAM,GAAsB;IACxC,IAAI,EAAE,EAAE;IACR,IAAI,EAAE,QAAQ;IACd,MAAM,EAAE,KAAK;IACb,IAAI,EAAE,IAAI;IACV,MAAM,EAAE,KAAK;CACb,CAAC"}

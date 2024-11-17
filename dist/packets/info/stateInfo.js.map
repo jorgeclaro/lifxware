@@ -1,0 +1,1 @@
+{"version":3,"file":"stateInfo.js","sourceRoot":"","sources":["../../../src/packets/info/stateInfo.ts"],"names":[],"mappings":"AAEA,MAAM,IAAI,GAAG,EAAE,CAAC;AAEhB,MAAM,CAAC,MAAM,SAAS,GAAsB;IAC3C,IAAI,EAAE,EAAE;IACR,IAAI,EAAE,WAAW;IACjB,MAAM,EAAE,KAAK;IACb,IAAI,EAAE,IAAI;IACV,MAAM,EAAE,KAAK;CACb,CAAC"}

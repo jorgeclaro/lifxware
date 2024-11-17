@@ -1,0 +1,1 @@
+{"version":3,"file":"stateWanSubscription.js","sourceRoot":"","sources":["../../../src/packets/wan/stateWanSubscription.ts"],"names":[],"mappings":"AAEA,MAAM,IAAI,GAAG,CAAC,CAAC;AAEf,MAAM,CAAC,MAAM,oBAAoB,GAAsB;IACtD,IAAI,EAAE,GAAG;IACT,IAAI,EAAE,cAAc;IACpB,MAAM,EAAE,KAAK;IACb,IAAI,EAAE,IAAI;IACV,MAAM,EAAE,KAAK;CACb,CAAC"}

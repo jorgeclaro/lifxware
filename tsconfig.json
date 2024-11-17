@@ -1,14 +1,21 @@
 {
 	"compilerOptions": {
+		"strict": true,
 		"module": "ESNext",
 		"target": "ESNext",
+		"moduleResolution": "node",
+		"outDir": "dist",
+		"declarationDir": "dist",
 		"declaration": true,
 		"declarationMap": true,
-		"inlineSourceMap": true,
-		"alwaysStrict": true,
-		"outDir": "dist",
+		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
+		"noImplicitAny": false,
+		"strictNullChecks": false,
+		"noImplicitThis": false,
+		"strictPropertyInitialization": false,
 		"skipLibCheck": true,
+		"sourceMap": true,
 		"paths": {
 			"from-exponential": [
 				"./node_modules/from-exponential"
@@ -19,7 +26,8 @@
 		"src"
 	],
 	"exclude": [
-		"node_modules"
+		"node_modules",
+		"dist"
 	],
 	"types": [
 		"@types/lodash",

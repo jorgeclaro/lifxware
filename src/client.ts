@@ -226,7 +226,7 @@ export class Client extends EventEmitter {
 
 					this.processMessagePackHandlers(parsedMsg, rinfo);
 					this.emit(ClientEvents.MESSAGE, parsedMsg, rinfo);
-				} catch (err) {
+				} catch (err: any) {
 					const e = new ServiceErrorBuilder(ER_CLIENT_MESSAGE_PROCESS)
 						.withContextualMessage(`Packet: ${rawMsg.toString('hex')}`)
 						.withInnerError(err)

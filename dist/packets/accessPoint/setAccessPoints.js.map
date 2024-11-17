@@ -1,0 +1,1 @@
+{"version":3,"file":"setAccessPoints.js","sourceRoot":"","sources":["../../../src/packets/accessPoint/setAccessPoints.ts"],"names":[],"mappings":"AAEA,MAAM,IAAI,GAAG,CAAC,CAAC;AAEf,MAAM,CAAC,MAAM,eAAe,GAAsB;IACjD,IAAI,EAAE,GAAG;IACT,IAAI,EAAE,iBAAiB;IACvB,MAAM,EAAE,KAAK;IACb,IAAI,EAAE,IAAI;IACV,MAAM,EAAE,KAAK;CACb,CAAC"}

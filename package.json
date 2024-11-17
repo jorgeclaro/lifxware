@@ -6,8 +6,9 @@
 	"contributors": [
 		"Leesa Ward <leesa@doubleedesign.com.au>"
 	],
-	"main": "dist/client.js",
+	"module": "dist/client.js",
 	"types": "dist/client.d.ts",
+	"type": "module",
 	"files": [
 		"dist/**/*"
 	],

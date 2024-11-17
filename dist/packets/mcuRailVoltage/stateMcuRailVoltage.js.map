@@ -1,0 +1,1 @@
+{"version":3,"file":"stateMcuRailVoltage.js","sourceRoot":"","sources":["../../../src/packets/mcuRailVoltage/stateMcuRailVoltage.ts"],"names":[],"mappings":"AAEA,MAAM,IAAI,GAAG,CAAC,CAAC;AAEf,MAAM,CAAC,MAAM,mBAAmB,GAAsB;IACrD,IAAI,EAAE,EAAE;IACR,IAAI,EAAE,qBAAqB;IAC3B,MAAM,EAAE,KAAK;IACb,IAAI,EAAE,IAAI;IACV,MAAM,EAAE,KAAK;CACb,CAAC"}

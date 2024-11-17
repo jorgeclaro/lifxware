@@ -1,0 +1,1 @@
+{"version":3,"file":"getHostInfo.js","sourceRoot":"","sources":["../../../src/packets/hostInfo/getHostInfo.ts"],"names":[],"mappings":"AAEA,MAAM,IAAI,GAAG,CAAC,CAAC;AAEf,MAAM,CAAC,MAAM,WAAW,GAAsB;IAC7C,IAAI,EAAE,EAAE;IACR,IAAI,EAAE,aAAa;IACnB,MAAM,EAAE,KAAK;IACb,IAAI,EAAE,IAAI;IACV,MAAM,EAAE,KAAK;CACb,CAAC"}

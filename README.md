@@ -41,7 +41,7 @@ For the initialization of the client different settings can be provided.
 This is an example with the default options:
 
 ```js
-const Client = require('lifxware').Client;
+import { Client } from 'lifxware';
 const client = new Client({
 	lightOfflineTolerance: 3, // A light is offline if not seen for the given amount of discoveries
 	messageHandlerTimeout: 45000, // in ms, if not answer in time an error is provided to get methods

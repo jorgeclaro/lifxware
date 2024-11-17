@@ -1,0 +1,1 @@
+{"version":3,"file":"acknowledgement.js","sourceRoot":"","sources":["../../../src/packets/others/acknowledgement.ts"],"names":[],"mappings":"AAEA,MAAM,IAAI,GAAG,CAAC,CAAC;AAEf,MAAM,CAAC,MAAM,eAAe,GAAsB;IACjD,IAAI,EAAE,EAAE;IACR,IAAI,EAAE,iBAAiB;IACvB,MAAM,EAAE,KAAK;IACb,IAAI,EAAE,IAAI;IACV,MAAM,EAAE,KAAK;CACb,CAAC"}

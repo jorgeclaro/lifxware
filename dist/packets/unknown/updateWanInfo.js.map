@@ -1,0 +1,1 @@
+{"version":3,"file":"updateWanInfo.js","sourceRoot":"","sources":["../../../src/packets/unknown/updateWanInfo.ts"],"names":[],"mappings":"AAEA,MAAM,IAAI,GAAG,CAAC,CAAC;AAEf,MAAM,CAAC,MAAM,aAAa,GAAsB;IAC/C,IAAI,EAAE,GAAG;IACT,IAAI,EAAE,eAAe;IACrB,MAAM,EAAE,KAAK;IACb,IAAI,EAAE,IAAI;IACV,MAAM,EAAE,KAAK;CACb,CAAC"}

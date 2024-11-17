@@ -1,0 +1,1 @@
+{"version":3,"file":"getTags.js","sourceRoot":"","sources":["../../../src/packets/tag/getTags.ts"],"names":[],"mappings":"AAEA,MAAM,IAAI,GAAG,CAAC,CAAC;AAEf,MAAM,CAAC,MAAM,OAAO,GAAsB;IACzC,IAAI,EAAE,EAAE;IACR,IAAI,EAAE,SAAS;IACf,MAAM,EAAE,IAAI;IACZ,IAAI,EAAE,IAAI;IACV,MAAM,EAAE,KAAK;CACb,CAAC"}
