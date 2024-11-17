@@ -1,0 +1,1 @@
+{"version":3,"file":"getInfrared.js","sourceRoot":"","sources":["../../../src/packets/infrared/getInfrared.ts"],"names":[],"mappings":"AAEA,MAAM,IAAI,GAAG,CAAC,CAAC;AAEf,MAAM,CAAC,MAAM,WAAW,GAAsB;IAC7C,IAAI,EAAE,GAAG;IACT,IAAI,EAAE,aAAa;IACnB,MAAM,EAAE,KAAK;IACb,IAAI,EAAE,IAAI;IACV,MAAM,EAAE,KAAK;CACb,CAAC"}

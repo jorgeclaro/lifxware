@@ -1,0 +1,1 @@
+{"version":3,"file":"getTemperature.js","sourceRoot":"","sources":["../../../src/packets/temperature/getTemperature.ts"],"names":[],"mappings":"AAEA,MAAM,IAAI,GAAG,CAAC,CAAC;AAEf,MAAM,CAAC,MAAM,cAAc,GAAsB;IAChD,IAAI,EAAE,GAAG;IACT,IAAI,EAAE,gBAAgB;IACtB,MAAM,EAAE,KAAK;IACb,IAAI,EAAE,IAAI;IACV,MAAM,EAAE,KAAK;CACb,CAAC"}

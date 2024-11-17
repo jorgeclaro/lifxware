@@ -1,2 +1,2 @@
 export {};
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaG9zdEZpcm13YXJlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vc3JjL3BhY2tldHMvaG9zdEZpcm13YXJlL2hvc3RGaXJtd2FyZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIn0=
+//# sourceMappingURL=hostFirmware.js.map

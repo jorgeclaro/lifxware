@@ -366,7 +366,7 @@ export function bufferToObject(buf: Buffer) {
 		}
 
 		return header;
-	} catch (err) {
+	} catch (err: any) {
 		err.message = `Could not convert buffer to object. Error: ${err.message}`;
 		throw err;
 	}

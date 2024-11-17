@@ -1,0 +1,1 @@
+{"version":3,"file":"setOwner.js","sourceRoot":"","sources":["../../../src/packets/owner/setOwner.ts"],"names":[],"mappings":"AAEA,MAAM,IAAI,GAAG,CAAC,CAAC;AAEf,MAAM,CAAC,MAAM,QAAQ,GAAsB;IAC1C,IAAI,EAAE,EAAE;IACR,IAAI,EAAE,UAAU;IAChB,MAAM,EAAE,KAAK;IACb,IAAI,EAAE,IAAI;IACV,MAAM,EAAE,KAAK;CACb,CAAC"}
