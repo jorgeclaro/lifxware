@@ -1,7 +1,7 @@
 {
 	"name": "lifxware",
 	"description": "Typescript implementation of the LIFX protocol",
-	"version": "0.1.25",
+	"version": "0.1.26",
 	"author": "Jorge Claro <jmc.claro@gmail.com>",
 	"contributors": [
 		"Leesa Ward <leesa@doubleedesign.com.au>"
