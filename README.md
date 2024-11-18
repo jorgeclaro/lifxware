@@ -627,41 +627,41 @@ try {
 
 ### Light events
 
-The following events might be thrown by the light.
+The following events might be thrown by the light instance.
 
 #### `connectivity`
 
 This event is thrown when the light becomes online or offline.
 
-`client.on('connectivity', (connectivity) => {});`
+`light.on('connectivity', (connectivity) => {});`
 
 #### `power`
 
 This event is thrown when the light changes its power state.
 
-`client.on('power', (power) => {});`
+`light.on('power', (power) => {});`
 
 #### `color`
 
 This event is thrown when the light changes its color.
 
-`client.on('color', (color) => {});`
+`light.on('color', (color) => {});`
 
 #### `state`
 
 This event is thrown when the light changes its power state, color or online status.
 
-`client.on('state', (state) => {});`
+`light.on('state', (state) => {});`
 
 #### `label`
 
 This event is thrown when the light changes its label.
 
-`client.on('label', (label) => {});`
+`light.on('label', (label) => {});`
 
 ### Client events
 
-The following events might be thrown by the client.
+The following events might be thrown by the client instance.
 
 #### `light-new`
 
