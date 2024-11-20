@@ -1,7 +1,7 @@
 {
 	"name": "lifxware",
 	"description": "Typescript implementation of the LIFX protocol",
-	"version": "0.1.27",
+	"version": "0.1.28",
 	"author": "Jorge Claro <jmc.claro@gmail.com>",
 	"contributors": [
 		"Leesa Ward <leesa@doubleedesign.com.au>"
@@ -29,8 +29,6 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"@types/lodash": "^4.17.13",
-		"@types/node": "^22.9.0",
 		"from-exponential": "^1.1.1",
 		"lodash": "^4.17.21"
 	},
@@ -48,6 +46,8 @@
 	"devDependencies": {
 		"@eslint/json": "^0.6.0",
 		"@eslint/markdown": "^6.2.1",
+		"@types/lodash": "^4.17.13",
+		"@types/node": "^22.9.0",
 		"@typescript-eslint/eslint-plugin": "^8.14.0",
 		"@typescript-eslint/parser": "^8.14.0",
 		"eslint": "^9.15.0",
