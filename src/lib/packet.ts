@@ -287,6 +287,7 @@ export function headerToBuffer(obj: PacketHeader): Buffer {
 			obj.protocolVersion = PROTOCOL_VERSION_CURRENT;
 		}
 	}
+
 	let frameDescription = obj.protocolVersion;
 
 	if (obj.addressable && obj.addressable === true) {
@@ -337,6 +338,7 @@ export function headerToBuffer(obj: PacketHeader): Buffer {
 	if (obj.resRequired && obj.resRequired === true) {
 		frameAddressDescription |= RESPONSE_REQUIRED_BIT;
 	}
+
 	buf.writeUInt8(frameAddressDescription, offset);
 	offset += 1;
 
