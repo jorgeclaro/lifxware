@@ -344,9 +344,8 @@ export class Client extends EventEmitter {
 							msgPack.payload.toString('hex') +
 							' to ' +
 							msgPack.targetAddress +
-							', send ' +
-							msgPack.sendAttempts +
-							' time(s)'
+							', attempt ' +
+							msgPack.sendAttempts
 						);
 					}
 				}
