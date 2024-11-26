@@ -330,7 +330,7 @@ export class Client extends EventEmitter {
 		if (msgPack.transactionType === PACKET_TRANSACTION_TYPES.ONE_WAY) {
 			this._socket.send(msgPack.payload as any, 0, msgPack.payload.length, this._port, msgPack.targetAddress);
 			if (this.debug) {
-				logger.info('DEBUG - ' + msgPack.payload.toString('hex') + ' to ' + msgPack.targetAddress);
+				logger.debug('DEBUG - ' + msgPack.payload.toString('hex') + ' to ' + msgPack.targetAddress);
 			}
 		} else if (msgPack.transactionType === PACKET_TRANSACTION_TYPES.REQUEST_RESPONSE) {
 			if (msgPack.sendAttempts < this._resendMaxTimes) {
@@ -339,7 +339,7 @@ export class Client extends EventEmitter {
 					msgPack.sendAttempts += 1;
 					msgPack.lastSentAt = Date.now();
 					if (this.debug) {
-						logger.info(
+						logger.debug(
 							'DEBUG - ' +
 							msgPack.payload.toString('hex') +
 							' to ' +
@@ -442,7 +442,9 @@ export class Client extends EventEmitter {
 			msg.source.toLowerCase() !== PACKET_DEFAULT_SORUCE &&
 			msg.sequence !== 0
 		) {
-			logger.info(`Source differs (v2) Msg Source: ${msg.source} Source: ${this.source}`);
+			if (this.debug) {
+				logger.debug(`Source differs (v2) Msg Source: ${msg.source} Client Source: ${this.source}`);
+			}
 
 			return;
 		}
@@ -450,7 +452,6 @@ export class Client extends EventEmitter {
 		/** Source matches and differs from PACKET_DEFAULT_SORUCE
 		 *  We check our message handler if the answer received is requested
 		 */
-
 		this._messagePackHandlers.forEach(async (handler: MessagePackHandler, hdlrIndex: number) => {
 			if (msg.name === handler.name) {
 				if (handler.sequenceNumber) {
@@ -472,7 +473,6 @@ export class Client extends EventEmitter {
 			/** We want to call expired request handlers for specific packages after the
 			 *  _messagePackHandlerTimeout set in options, to specify an error
 			 */
-
 			if (handler.sequenceNumber) {
 				if (
 					new Date().getUTCMilliseconds() >
@@ -511,7 +511,7 @@ export class Client extends EventEmitter {
 					address: rinfo.address,
 					port: msg.port,
 					discoveryPacketNumber: this._discoveryPacketSequence,
-					legacy: legacy
+					legacy
 				});
 
 				this.devices[msg.target] = lightDevice;
