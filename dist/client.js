@@ -231,7 +231,7 @@ export class Client extends EventEmitter {
         if (msgPack.transactionType === PACKET_TRANSACTION_TYPES.ONE_WAY) {
             this._socket.send(msgPack.payload, 0, msgPack.payload.length, this._port, msgPack.targetAddress);
             if (this.debug) {
-                logger.info('DEBUG - ' + msgPack.payload.toString('hex') + ' to ' + msgPack.targetAddress);
+                logger.debug('DEBUG - ' + msgPack.payload.toString('hex') + ' to ' + msgPack.targetAddress);
             }
         }
         else if (msgPack.transactionType === PACKET_TRANSACTION_TYPES.REQUEST_RESPONSE) {
@@ -241,13 +241,12 @@ export class Client extends EventEmitter {
                     msgPack.sendAttempts += 1;
                     msgPack.lastSentAt = Date.now();
                     if (this.debug) {
-                        logger.info('DEBUG - ' +
+                        logger.debug('DEBUG - ' +
                             msgPack.payload.toString('hex') +
                             ' to ' +
                             msgPack.targetAddress +
-                            ', send ' +
-                            msgPack.sendAttempts +
-                            ' time(s)');
+                            ', attempt ' +
+                            msgPack.sendAttempts);
                     }
                 }
                 /** Add to the end of the queue again */
@@ -317,7 +316,9 @@ export class Client extends EventEmitter {
         if (msg.source.toLowerCase() !== this.source.toLowerCase() &&
             msg.source.toLowerCase() !== PACKET_DEFAULT_SORUCE &&
             msg.sequence !== 0) {
-            logger.info(`Source differs (v2) Msg Source: ${msg.source} Source: ${this.source}`);
+            if (this.debug) {
+                logger.debug(`Source differs (v2) Msg Source: ${msg.source} Client Source: ${this.source}`);
+            }
             return;
         }
         /** Source matches and differs from PACKET_DEFAULT_SORUCE
@@ -365,7 +366,7 @@ export class Client extends EventEmitter {
                     address: rinfo.address,
                     port: msg.port,
                     discoveryPacketNumber: this._discoveryPacketSequence,
-                    legacy: legacy
+                    legacy
                 });
                 this.devices[msg.target] = lightDevice;
                 try {
