@@ -1,0 +1,1 @@
+{"version":3,"file":"relay.d.ts","sourceRoot":"","sources":["../../../src/packets/relay/relay.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,iBAAiB;IACjC,UAAU,EAAE,MAAM,CAAC;CACnB;AAED,MAAM,WAAW,eAAe;IAC/B,UAAU,EAAE,MAAM,CAAC;IACnB,KAAK,EAAE,MAAM,CAAC;CACd;AAED,eAAO,MAAM,eAAe,IAAI,CAAC;AACjC,eAAO,MAAM,eAAe,MAAM,CAAC"}

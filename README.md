@@ -8,6 +8,23 @@ This library is not, in any way, affiliated or related to LiFi Labs, Inc.. Use i
 - [LAN Protocol Docs](https://github.com/LIFX/lifx-protocol-docs)
 
 
+## Device Support & Testing Status
+
+### Tested Devices (Fully Supported)
+Standard LIFX bulbs and color zones - all features are tested and working.
+
+### Untested Devices (Implemented but Not Hardware-Tested)
+The following devices/features are implemented but have not been tested with real hardware:
+
+- **LIFX Switch** - Button packets (types 905-911) and Relay packets (types 816-818)
+- **LIFX Clean** - HEV Cycle packets (types 142-149)
+- **Extended MultiZone strips** - Effect (507-509) and Extended (510-512) packets for 82-zone strips
+- **Tile improvements** - Tile Effect packets (716, 718-720)
+- **IR bulbs** - Infrared packets (types 120-122)
+- **Tiles** - Tile device chain packets (types 701-715)
+
+Use with caution and report any issues.
+
 ## Installation
 
 ```sh

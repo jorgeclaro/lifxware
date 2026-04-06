@@ -1,0 +1,1 @@
+{"version":3,"file":"getExtendedColorZones.js","sourceRoot":"","sources":["../../../src/packets/colorZone/getExtendedColorZones.ts"],"names":[],"mappings":"AAEA,MAAM,IAAI,GAAG,CAAC,CAAC;AAEf,MAAM,CAAC,MAAM,qBAAqB,GAAsB;IACvD,IAAI,EAAE,GAAG;IACT,IAAI,EAAE,uBAAuB;IAC7B,MAAM,EAAE,KAAK;IACb,IAAI,EAAE,IAAI;IACV,MAAM,EAAE,KAAK;CACb,CAAC"}
