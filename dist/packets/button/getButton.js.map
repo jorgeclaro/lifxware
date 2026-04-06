@@ -1,0 +1,1 @@
+{"version":3,"file":"getButton.js","sourceRoot":"","sources":["../../../src/packets/button/getButton.ts"],"names":[],"mappings":"AAEA,MAAM,IAAI,GAAG,CAAC,CAAC;AAEf,MAAM,CAAC,MAAM,SAAS,GAAsB;IAC3C,IAAI,EAAE,GAAG;IACT,IAAI,EAAE,WAAW;IACjB,MAAM,EAAE,KAAK;IACb,IAAI,EAAE,IAAI;IACV,MAAM,EAAE,KAAK;CACb,CAAC"}

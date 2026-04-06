@@ -75,5 +75,39 @@ export declare class Light extends EventEmitter {
     getTileState64(timeout?: number): Promise<unknown>;
     setTileState64(setTileState64Request: SetTileState64Request, timeout?: number): Promise<unknown>;
     setUserPosition(setUserPositionRequest: SetUserPositionRequest): Promise<unknown>;
+    getHevCycle(timeout?: number): Promise<unknown>;
+    setHevCycle(hevCycle: {
+        enable: boolean;
+        durationS: number;
+    }, timeout?: number): Promise<unknown>;
+    getHevCycleConfig(timeout?: number): Promise<unknown>;
+    setHevCycleConfig(config: {
+        indication: boolean;
+        durationS: number;
+    }, timeout?: number): Promise<unknown>;
+    getLastHevCycleResult(timeout?: number): Promise<unknown>;
+    getMultiZoneEffect(timeout?: number): Promise<unknown>;
+    setMultiZoneEffect(effect: {
+        type: number;
+        speed: number;
+        duration: bigint;
+    }, timeout?: number): Promise<unknown>;
+    getExtendedColorZones(timeout?: number): Promise<unknown>;
+    setExtendedColorZones(zones: {
+        duration: number;
+        apply: number;
+        index: number;
+        colors: ColorHSBK[];
+    }, timeout?: number): Promise<unknown>;
+    getTileEffect(timeout?: number): Promise<unknown>;
+    setTileEffect(effect: {
+        type: number;
+        speed: number;
+        duration: bigint;
+        paletteCount: number;
+        palette: ColorHSBK[];
+    }, timeout?: number): Promise<unknown>;
+    getRelayPower(relayIndex: number, timeout?: number): Promise<unknown>;
+    setRelayPower(relayIndex: number, power: boolean, timeout?: number): Promise<unknown>;
 }
 //# sourceMappingURL=light.d.ts.map

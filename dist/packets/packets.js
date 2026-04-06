@@ -107,6 +107,49 @@ import { stateDeviceChain } from './tiles/stateDeviceChain';
 import { stateTileState64 } from './tiles/stateTileState64';
 /** Unknown packets */
 import { updateWanInfo } from './unknown/updateWanInfo';
+/**
+ * Relay device related packages
+ */
+import { getRelayPower } from './relay/getRelayPower';
+import { setRelayPower } from './relay/setRelayPower';
+import { stateRelayPower } from './relay/stateRelayPower';
+/**
+ * HEV Cycle packages (LIFX Clean)
+ */
+import { getHevCycle } from './hev/getHevCycle';
+import { setHevCycle } from './hev/setHevCycle';
+import { stateHevCycle } from './hev/stateHevCycle';
+import { getHevCycleConfig } from './hev/getHevCycleConfig';
+import { setHevCycleConfig } from './hev/setHevCycleConfig';
+import { stateHevCycleConfig } from './hev/stateHevCycleConfig';
+import { getLastHevCycleResult } from './hev/getLastHevCycleResult';
+import { stateLastHevCycleResult } from './hev/stateLastHevCycleResult';
+/**
+ * Button packages (LIFX Switch)
+ */
+import { getButton } from './button/getButton';
+import { getButtonConfig } from './button/getButtonConfig';
+import { setButtonConfig } from './button/setButtonConfig';
+import { stateButtonConfig } from './button/stateButtonConfig';
+/**
+ * MultiZone Effect packages
+ */
+import { getMultiZoneEffect } from './colorZone/getMultiZoneEffect';
+import { setMultiZoneEffect } from './colorZone/setMultiZoneEffect';
+import { stateMultiZoneEffect } from './colorZone/stateMultiZoneEffect';
+/**
+ * MultiZone Extended packages (82 zones)
+ */
+import { setExtendedColorZones } from './colorZone/setExtendedColorZones';
+import { getExtendedColorZones } from './colorZone/getExtendedColorZones';
+import { stateExtendedColorZones } from './colorZone/stateExtendedColorZones';
+/**
+ * Tile Effect packages
+ */
+import { copyFrameBuffer } from './tiles/copyFrameBuffer';
+import { getTileEffect } from './tiles/getTileEffect';
+import { setTileEffect } from './tiles/setTileEffect';
+import { stateTileEffect } from './tiles/stateTileEffect';
 export const packet = {
     getService,
     stateService,
@@ -200,6 +243,31 @@ export const packet = {
     setUserPosition,
     stateDeviceChain,
     stateTileState64,
-    updateWanInfo
+    updateWanInfo,
+    getRelayPower,
+    setRelayPower,
+    stateRelayPower,
+    getHevCycle,
+    setHevCycle,
+    stateHevCycle,
+    getHevCycleConfig,
+    setHevCycleConfig,
+    stateHevCycleConfig,
+    getLastHevCycleResult,
+    stateLastHevCycleResult,
+    getButton,
+    getButtonConfig,
+    setButtonConfig,
+    stateButtonConfig,
+    getMultiZoneEffect,
+    setMultiZoneEffect,
+    stateMultiZoneEffect,
+    setExtendedColorZones,
+    getExtendedColorZones,
+    stateExtendedColorZones,
+    copyFrameBuffer,
+    getTileEffect,
+    setTileEffect,
+    stateTileEffect
 };
 //# sourceMappingURL=packets.js.map

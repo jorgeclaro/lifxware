@@ -1298,4 +1298,364 @@ export class Light extends EventEmitter {
 			});
 		});
 	}
+
+	public getHevCycle(timeout: number = DEFAULT_MSG_REPLY_TIMEOUT) {
+		const ctx = this;
+
+		return new Promise((resolve, reject) => {
+			if (!ctx._connectivity) {
+				return reject(new ServiceErrorBuilder(ER_LIGHT_OFFLINE).withContextualMessage(`Id: ${ctx.id}`).build());
+			}
+
+			const packetObj = createObject(packet.getHevCycle.type, {}, ctx._client.source, ctx.id);
+			const sqnNumber = ctx._client.send(packetObj);
+			const timeoutHandle = setTimeout(() => {
+				reject(new ServiceErrorBuilder(ER_LIGHT_CMD_TIMEOUT).withContextualMessage(`Id: ${ctx.id}`).build());
+			}, timeout);
+
+			ctx._client.addMessageHandler(
+				packet.stateHevCycle.name,
+				(err: Error, data) => {
+					if (err) {
+						return reject(err);
+					}
+
+					clearTimeout(timeoutHandle);
+
+					return resolve(data);
+				},
+				sqnNumber
+			);
+		});
+	}
+
+	public setHevCycle(hevCycle: { enable: boolean; durationS: number }, timeout: number = DEFAULT_MSG_REPLY_TIMEOUT) {
+		const ctx = this;
+
+		return new Promise((resolve, reject) => {
+			if (!ctx._connectivity) {
+				return reject(new ServiceErrorBuilder(ER_LIGHT_OFFLINE).withContextualMessage(`Id: ${ctx.id}`).build());
+			}
+
+			const packetObj = createObject(packet.setHevCycle.type, hevCycle, ctx._client.source, ctx.id);
+			const sqnNumber = ctx._client.send(packetObj);
+			const timeoutHandle = setTimeout(() => {
+				reject(new ServiceErrorBuilder(ER_LIGHT_CMD_TIMEOUT).withContextualMessage(`Id: ${ctx.id}`).build());
+			}, timeout);
+
+			ctx._client.addMessageHandler(
+				packet.stateHevCycle.name,
+				(err: Error, data) => {
+					if (err) {
+						return reject(err);
+					}
+
+					clearTimeout(timeoutHandle);
+
+					return resolve(data);
+				},
+				sqnNumber
+			);
+		});
+	}
+
+	public getHevCycleConfig(timeout: number = DEFAULT_MSG_REPLY_TIMEOUT) {
+		const ctx = this;
+
+		return new Promise((resolve, reject) => {
+			if (!ctx._connectivity) {
+				return reject(new ServiceErrorBuilder(ER_LIGHT_OFFLINE).withContextualMessage(`Id: ${ctx.id}`).build());
+			}
+
+			const packetObj = createObject(packet.getHevCycleConfig.type, {}, ctx._client.source, ctx.id);
+			const sqnNumber = ctx._client.send(packetObj);
+			const timeoutHandle = setTimeout(() => {
+				reject(new ServiceErrorBuilder(ER_LIGHT_CMD_TIMEOUT).withContextualMessage(`Id: ${ctx.id}`).build());
+			}, timeout);
+
+			ctx._client.addMessageHandler(
+				packet.stateHevCycleConfig.name,
+				(err: Error, data) => {
+					if (err) {
+						return reject(err);
+					}
+
+					clearTimeout(timeoutHandle);
+
+					return resolve(data);
+				},
+				sqnNumber
+			);
+		});
+	}
+
+	public setHevCycleConfig(config: { indication: boolean; durationS: number }, timeout: number = DEFAULT_MSG_REPLY_TIMEOUT) {
+		const ctx = this;
+
+		return new Promise((resolve, reject) => {
+			if (!ctx._connectivity) {
+				return reject(new ServiceErrorBuilder(ER_LIGHT_OFFLINE).withContextualMessage(`Id: ${ctx.id}`).build());
+			}
+
+			const packetObj = createObject(packet.setHevCycleConfig.type, config, ctx._client.source, ctx.id);
+			const sqnNumber = ctx._client.send(packetObj);
+			const timeoutHandle = setTimeout(() => {
+				reject(new ServiceErrorBuilder(ER_LIGHT_CMD_TIMEOUT).withContextualMessage(`Id: ${ctx.id}`).build());
+			}, timeout);
+
+			ctx._client.addMessageHandler(
+				packet.stateHevCycleConfig.name,
+				(err: Error, data) => {
+					if (err) {
+						return reject(err);
+					}
+
+					clearTimeout(timeoutHandle);
+
+					return resolve(data);
+				},
+				sqnNumber
+			);
+		});
+	}
+
+	public getLastHevCycleResult(timeout: number = DEFAULT_MSG_REPLY_TIMEOUT) {
+		const ctx = this;
+
+		return new Promise((resolve, reject) => {
+			if (!ctx._connectivity) {
+				return reject(new ServiceErrorBuilder(ER_LIGHT_OFFLINE).withContextualMessage(`Id: ${ctx.id}`).build());
+			}
+
+			const packetObj = createObject(packet.getLastHevCycleResult.type, {}, ctx._client.source, ctx.id);
+			const sqnNumber = ctx._client.send(packetObj);
+			const timeoutHandle = setTimeout(() => {
+				reject(new ServiceErrorBuilder(ER_LIGHT_CMD_TIMEOUT).withContextualMessage(`Id: ${ctx.id}`).build());
+			}, timeout);
+
+			ctx._client.addMessageHandler(
+				packet.stateLastHevCycleResult.name,
+				(err: Error, data) => {
+					if (err) {
+						return reject(err);
+					}
+
+					clearTimeout(timeoutHandle);
+
+					return resolve(data);
+				},
+				sqnNumber
+			);
+		});
+	}
+
+	public getMultiZoneEffect(timeout: number = DEFAULT_MSG_REPLY_TIMEOUT) {
+		const ctx = this;
+
+		return new Promise((resolve, reject) => {
+			if (!ctx._connectivity) {
+				return reject(new ServiceErrorBuilder(ER_LIGHT_OFFLINE).withContextualMessage(`Id: ${ctx.id}`).build());
+			}
+
+			const packetObj = createObject(packet.getMultiZoneEffect.type, {}, ctx._client.source, ctx.id);
+			const sqnNumber = ctx._client.send(packetObj);
+			const timeoutHandle = setTimeout(() => {
+				reject(new ServiceErrorBuilder(ER_LIGHT_CMD_TIMEOUT).withContextualMessage(`Id: ${ctx.id}`).build());
+			}, timeout);
+
+			ctx._client.addMessageHandler(
+				packet.stateMultiZoneEffect.name,
+				(err: Error, data) => {
+					if (err) {
+						return reject(err);
+					}
+
+					clearTimeout(timeoutHandle);
+
+					return resolve(data);
+				},
+				sqnNumber
+			);
+		});
+	}
+
+	public setMultiZoneEffect(
+		effect: { type: number; speed: number; duration: bigint },
+		timeout: number = DEFAULT_MSG_REPLY_TIMEOUT
+	) {
+		const ctx = this;
+
+		return new Promise((resolve, reject) => {
+			if (!ctx._connectivity) {
+				return reject(new ServiceErrorBuilder(ER_LIGHT_OFFLINE).withContextualMessage(`Id: ${ctx.id}`).build());
+			}
+
+			const packetObj = createObject(packet.setMultiZoneEffect.type, effect, ctx._client.source, ctx.id);
+			ctx._client.send(packetObj, (err: Error) => {
+				if (err) {
+					return reject(err);
+				}
+
+				return resolve(undefined);
+			});
+		});
+	}
+
+	public getExtendedColorZones(timeout: number = DEFAULT_MSG_REPLY_TIMEOUT) {
+		const ctx = this;
+
+		return new Promise((resolve, reject) => {
+			if (!ctx._connectivity) {
+				return reject(new ServiceErrorBuilder(ER_LIGHT_OFFLINE).withContextualMessage(`Id: ${ctx.id}`).build());
+			}
+
+			const packetObj = createObject(packet.getExtendedColorZones.type, {}, ctx._client.source, ctx.id);
+			const sqnNumber = ctx._client.send(packetObj);
+			const timeoutHandle = setTimeout(() => {
+				reject(new ServiceErrorBuilder(ER_LIGHT_CMD_TIMEOUT).withContextualMessage(`Id: ${ctx.id}`).build());
+			}, timeout);
+
+			ctx._client.addMessageHandler(
+				packet.stateExtendedColorZones.name,
+				(err: Error, data) => {
+					if (err) {
+						return reject(err);
+					}
+
+					clearTimeout(timeoutHandle);
+
+					return resolve(data);
+				},
+				sqnNumber
+			);
+		});
+	}
+
+	public setExtendedColorZones(
+		zones: { duration: number; apply: number; index: number; colors: ColorHSBK[] },
+		timeout: number = DEFAULT_MSG_REPLY_TIMEOUT
+	) {
+		const ctx = this;
+
+		return new Promise((resolve, reject) => {
+			if (!ctx._connectivity) {
+				return reject(new ServiceErrorBuilder(ER_LIGHT_OFFLINE).withContextualMessage(`Id: ${ctx.id}`).build());
+			}
+
+			const packetObj = createObject(packet.setExtendedColorZones.type, zones, ctx._client.source, ctx.id);
+			ctx._client.send(packetObj, (err: Error) => {
+				if (err) {
+					return reject(err);
+				}
+
+				return resolve(undefined);
+			});
+		});
+	}
+
+	public getTileEffect(timeout: number = DEFAULT_MSG_REPLY_TIMEOUT) {
+		const ctx = this;
+
+		return new Promise((resolve, reject) => {
+			if (!ctx._connectivity) {
+				return reject(new ServiceErrorBuilder(ER_LIGHT_OFFLINE).withContextualMessage(`Id: ${ctx.id}`).build());
+			}
+
+			const packetObj = createObject(packet.getTileEffect.type, {}, ctx._client.source, ctx.id);
+			const sqnNumber = ctx._client.send(packetObj);
+			const timeoutHandle = setTimeout(() => {
+				reject(new ServiceErrorBuilder(ER_LIGHT_CMD_TIMEOUT).withContextualMessage(`Id: ${ctx.id}`).build());
+			}, timeout);
+
+			ctx._client.addMessageHandler(
+				packet.stateTileEffect.name,
+				(err: Error, data) => {
+					if (err) {
+						return reject(err);
+					}
+
+					clearTimeout(timeoutHandle);
+
+					return resolve(data);
+				},
+				sqnNumber
+			);
+		});
+	}
+
+	public setTileEffect(
+		effect: { type: number; speed: number; duration: bigint; paletteCount: number; palette: ColorHSBK[] },
+		timeout: number = DEFAULT_MSG_REPLY_TIMEOUT
+	) {
+		const ctx = this;
+
+		return new Promise((resolve, reject) => {
+			if (!ctx._connectivity) {
+				return reject(new ServiceErrorBuilder(ER_LIGHT_OFFLINE).withContextualMessage(`Id: ${ctx.id}`).build());
+			}
+
+			const packetObj = createObject(packet.setTileEffect.type, effect, ctx._client.source, ctx.id);
+			ctx._client.send(packetObj, (err: Error) => {
+				if (err) {
+					return reject(err);
+				}
+
+				return resolve(undefined);
+			});
+		});
+	}
+
+	public getRelayPower(relayIndex: number, timeout: number = DEFAULT_MSG_REPLY_TIMEOUT) {
+		const ctx = this;
+
+		return new Promise((resolve, reject) => {
+			if (!ctx._connectivity) {
+				return reject(new ServiceErrorBuilder(ER_LIGHT_OFFLINE).withContextualMessage(`Id: ${ctx.id}`).build());
+			}
+
+			const packetObj = createObject(packet.getRelayPower.type, { relayIndex }, ctx._client.source, ctx.id);
+			const sqnNumber = ctx._client.send(packetObj);
+			const timeoutHandle = setTimeout(() => {
+				reject(new ServiceErrorBuilder(ER_LIGHT_CMD_TIMEOUT).withContextualMessage(`Id: ${ctx.id}`).build());
+			}, timeout);
+
+			ctx._client.addMessageHandler(
+				packet.stateRelayPower.name,
+				(err: Error, data) => {
+					if (err) {
+						return reject(err);
+					}
+
+					clearTimeout(timeoutHandle);
+
+					return resolve(data);
+				},
+				sqnNumber
+			);
+		});
+	}
+
+	public setRelayPower(relayIndex: number, power: boolean, timeout: number = DEFAULT_MSG_REPLY_TIMEOUT) {
+		const ctx = this;
+
+		return new Promise((resolve, reject) => {
+			if (!ctx._connectivity) {
+				return reject(new ServiceErrorBuilder(ER_LIGHT_OFFLINE).withContextualMessage(`Id: ${ctx.id}`).build());
+			}
+
+			const packetObj = createObject(
+				packet.setRelayPower.type,
+				{ relayIndex, level: power ? 65535 : 0 },
+				ctx._client.source,
+				ctx.id
+			);
+			ctx._client.send(packetObj, (err: Error) => {
+				if (err) {
+					return reject(err);
+				}
+
+				return resolve(undefined);
+			});
+		});
+	}
 }
