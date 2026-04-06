@@ -2,14 +2,14 @@ import * as os from 'os';
 // @ts-ignore
 import fromExponential from 'from-exponential';
 /**
- * Sleeps for a confugurable interval
+ * Sleeps for a configurable interval
  * @param milliseconds interval of sleep
  */
 export function sleep(milliseconds) {
     return new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
 /**
- * Rounds expoential numbers
+ * Rounds exponential numbers
  * @param value value to round
  * @param decimals number of decimals
  */
@@ -37,11 +37,18 @@ export function getHostIPs() {
  */
 export function isIpv4Format(ip) {
     const ipv4Regex = /^(\d{1,3}\.){3}\d{1,3}$/;
-    return ipv4Regex.test(ip);
+    if (!ipv4Regex.test(ip)) {
+        return false;
+    }
+    const parts = ip.split('.');
+    return parts.every((part) => {
+        const num = parseInt(part, 10);
+        return num >= 0 && num <= 255;
+    });
 }
 /**
  * Generates a random hex string of the given length
- * @param number length to generate
+ * @param length length to generate
  * @return random hex string
  */
 export function getRandomHexString(length) {

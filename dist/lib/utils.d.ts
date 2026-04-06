@@ -1,10 +1,10 @@
 /**
- * Sleeps for a confugurable interval
+ * Sleeps for a configurable interval
  * @param milliseconds interval of sleep
  */
 export declare function sleep(milliseconds: number): Promise<unknown>;
 /**
- * Rounds expoential numbers
+ * Rounds exponential numbers
  * @param value value to round
  * @param decimals number of decimals
  */
@@ -22,7 +22,7 @@ export declare function getHostIPs(): string[];
 export declare function isIpv4Format(ip: string): boolean;
 /**
  * Generates a random hex string of the given length
- * @param number length to generate
+ * @param length length to generate
  * @return random hex string
  */
 export declare function getRandomHexString(length?: number): string;
